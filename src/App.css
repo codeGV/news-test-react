@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.search-cnt{
+  margin: auto;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.country-container{
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  width: 200px;
+  height: 40px;
+}

@@ -1,0 +1,18 @@
+
+.grid-card{
+    height: 400px;
+    width: 300px;
+    text-align: left;
+    margin-top: 20px;
+}
+.grid-card-title{
+    height: 92px;
+}
+.grid-card-img{
+    max-height: 140px;
+}
+.grid-card-text{
+    height: 70px;
+    overflow: hidden;
+}
+
