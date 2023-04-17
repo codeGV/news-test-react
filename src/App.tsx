@@ -30,7 +30,7 @@ function App() {
           <Categories />
         </Tab>
         <Tab eventKey="search" title="Search">
-          <SearchNews />
+          <SearchNews country={country}/>
         </Tab>
       </Tabs>
       <div className="country-container">

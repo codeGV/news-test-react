@@ -1,11 +1,11 @@
 import React from "react";
 import NewsGrid from "../NewsGrid";
 import { News } from "../NewsGrid/components/NewsPost";
-import { searchNews } from "../services/news.service";
+import { getNews } from "../services/news.service";
 import Form from "react-bootstrap/Form";
 import NewsDetails from "../NewsDetails";
 
-function SearchNews() {
+function SearchNews(props: { country: string }) {
   const [news, setNews] = React.useState<News[]>([]);
   const [search, setSearch] = React.useState<string>("");
   const [selectedNews, setSelectedNews] = React.useState<News | null>(null);
@@ -13,11 +13,10 @@ function SearchNews() {
   let searchTimeout: NodeJS.Timeout;
 
   React.useEffect(() => {
-    search &&
-      searchNews(search).subscribe((res) => {
+    getNews(props.country,search).subscribe((res) => {
         setNews(res.articles);
       });
-  }, [search]);
+  }, [props.country,search]);
 
   const onSearchChange = (text: string) => {
     clearTimeout(searchTimeout);

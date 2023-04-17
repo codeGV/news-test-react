@@ -14,11 +14,21 @@ function NewsGrid(props: NewsGridProps) {
     <div className="NewsGrid">
       <Container fluid>
         <Row>
-          {props.items.map((item, i) => (
-            <Col>
-              <NewsPost onNews={() => props.onNews(item)} key={i} item={item} />
-            </Col>
-          ))}
+          {props.items.length ? (
+            props.items.map((item, i) => (
+              <Col md={3}>
+                <NewsPost
+                  onNews={() => props.onNews(item)}
+                  key={i}
+                  item={item}
+                />
+              </Col>
+            ))
+          ) : (
+            <div className="text-nowrap">
+              No data found
+            </div>
+          )}
         </Row>
       </Container>
     </div>
